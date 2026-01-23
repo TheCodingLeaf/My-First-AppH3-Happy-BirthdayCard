@@ -1,6 +1,7 @@
 package com.example.myfirstapph3
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +23,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
+import androidx.compose.material3.Button
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,6 +46,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(8.dp)
                     )
                 }
+                FromButton()
             }
         }
     }
@@ -98,12 +101,28 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
 @Composable
 fun BirthdayCardPreview(){
     MyFirstAppH3Theme() {
-//        Greeting(message = "Happy Birthday Einars!", from = "From Sam")
         Box {
             GreetingImage(
                 message = stringResource(R.string.happy_birthday_text),
                 from = stringResource(R.string.happy_birtrhday_from_txt)
             )
+        }
+    }
+}
+
+@Preview
+@Composable
+fun FromButton(modifier: Modifier = Modifier) {
+    Box(modifier = modifier
+//        .fillMaxSize()
+        .padding(100.dp)
+    ){
+        Button(
+            onClick = {
+                //do
+            }
+        ) {
+            Text(text = "Click Me")
         }
     }
 }
